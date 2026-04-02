@@ -1,13 +1,13 @@
 import { Title } from "@solidjs/meta";
 import { Component } from "solid-js";
 
-const About: Component = () => {
+const Sell: Component = () => {
   return (
     <main>
-      <Title>About</Title>
-      <h1>About</h1>
+      <Title>Sell</Title>
+      <h1>Sell</h1>
     </main>
   );
 }
 
-export default About;
+export default Sell;

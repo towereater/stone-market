@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+.section {
+  @apply max-w-7xl mx-auto py-24 px-8;
+}
+
+.header {
+  @apply flex justify-between items-end mb-12;
+}
+
+.title {
+  @apply text-3xl font-light tracking-[0.15em] text-gray-900 uppercase;
+}
+
+.carousel {
+  @apply flex items-center justify-between gap-8;
+}
+
+.arrowBtn {
+  @apply text-5xl text-gray-300 hover:text-black transition-colors font-light pb-2;
+}
+
+.grid {
+  @apply grid grid-cols-1 md:grid-cols-3 gap-12 w-full;
+}

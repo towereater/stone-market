@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+.card {
+  @apply flex flex-col cursor-pointer;
+}
+
+.imgWrapper {
+  @apply w-full aspect-3/4 overflow-hidden mb-6 relative bg-gray-100;
+}
+
+.img {
+  @apply w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-in-out;
+}
+
+.textWrapper {
+  @apply text-left;
+}
+
+.name {
+  @apply font-medium text-gray-900 text-lg tracking-widest mb-2 uppercase;
+}
+
+.detail {
+  @apply text-xs font-light text-gray-500 tracking-widest uppercase mb-1;
+}

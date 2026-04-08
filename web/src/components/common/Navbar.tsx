@@ -1,10 +1,18 @@
-import { Component } from "solid-js";
-import { A } from "@solidjs/router";
+import { Component, Show } from "solid-js";
+import { A, useNavigate } from "@solidjs/router";
 import { locale, setLocale, t, Locale } from "@store/i18n";
+import { isAuthenticated, logout } from "@store/auth";
 
 import styles from "@styles/Navbar.module.css";
 
 const Navbar: Component = () => {
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    logout();
+    navigate("/login");
+  };
+
   return (
     <header class={styles.header}>
       
@@ -38,13 +46,24 @@ const Navbar: Component = () => {
           <option value="en" class="text-black">EN</option>
           <option value="it" class="text-black">IT</option>
         </select>
-        
-        <A href="/register" class={styles.btnRegister}>
-          {t('nav.register').toUpperCase()}
-        </A>
-        <A href="/login" class={styles.btnLogin}>
-          {t('nav.login').toUpperCase()}
-        </A>
+
+        <Show 
+          when={isAuthenticated()} 
+          fallback={
+            <>
+              <A href="/register" class={styles.btnRegister}>
+                {t('nav.register').toUpperCase()}
+              </A>
+              <A href="/login" class={styles.btnLogin}>
+                {t('nav.login').toUpperCase()}
+              </A>
+            </>
+          }
+        >
+          <button onClick={handleLogout} class={styles.btnLogin}>
+            Logout
+          </button>
+        </Show>
       </div>
     </header>
   );

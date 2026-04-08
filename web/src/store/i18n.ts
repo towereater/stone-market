@@ -9,7 +9,7 @@ interface Dictionary {
   featured: { title: string; dimensions: string; seller: string };
   auth: {
     loginSubtitle: string;
-    email: string;
+    username: string;
     password: string;
     loginBtn: string;
     forgotPwd: string;
@@ -30,7 +30,7 @@ const dictionaries: Record<Locale, Dictionary> = {
     featured: { title: "FEATURED SALES", dimensions: "Dimensions", seller: "Seller" },
     auth: {
       loginSubtitle: "Log In to your account",
-      email: "Email",
+      username: "Username",
       password: "Password",
       loginBtn: "LOG IN",
       forgotPwd: "Forgot password?",
@@ -49,7 +49,7 @@ const dictionaries: Record<Locale, Dictionary> = {
     featured: { title: "VENDITE IN EVIDENZA", dimensions: "Dimensioni", seller: "Venditore" },
     auth: {
       loginSubtitle: "Accedi al tuo account",
-      email: "Email",
+      username: "Username",
       password: "Password",
       loginBtn: "ACCEDI",
       forgotPwd: "Hai dimenticato la password?",

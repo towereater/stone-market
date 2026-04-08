@@ -1,54 +1,147 @@
-import { Component } from "solid-js";
-import { A } from "@solidjs/router";
+import { Component, Show, createSignal } from "solid-js";
+import { A, useNavigate } from "@solidjs/router";
 import { t } from "@store/i18n";
+import { login } from "@store/auth";
+
+import styles from "@styles/Login.module.css"
 
 const Register: Component = () => {
+  // Navigator
+  const navigate = useNavigate();
+
+  // Registration data
+  const [name, setName] = createSignal("");
+  const [username, setUsername] = createSignal("");
+  const [password, setPassword] = createSignal("");
+
+  // Registration status
+  const [error, setError] = createSignal("");
+  const [isLoading, setIsLoading] = createSignal(false);
+
+  // Registation data validation
+  const validateForm = () => {
+    if (name().trim().length < 2) {
+      setError("Invalid name");
+      return false;
+    }
+    // if (!username().includes("@")) {
+    //   setError("Invalid username");
+    //   return false;
+    // }
+    if (password().length < 8) {
+      setError("Password is too short");
+      return false;
+    }
+
+    setError("");
+    return true;
+  };
+
+  // Registration action
+  const handleRegister = async (e: Event) => {
+    e.preventDefault();
+    if (!validateForm()) return;
+
+    setIsLoading(true);
+
+    try {
+      const response = await fetch("https://a770dbb4-5041-4cfb-a9b7-9ddf5b97bc93.mock.pstmn.io/users", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          username: username(),
+          password: password(),
+          name: name()
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Registration error");
+      }
+
+      //const data = await response.json();
+      
+      // Se l'API logga direttamente l'utente dopo la registrazione:
+      // if (data.token) {
+      //   login(data.token);
+      //   navigate("/");
+      // } else {
+        // Altrimenti lo mandiamo al login
+        navigate("/login");
+      //}
+    } catch (err: any) {
+      setError(err.message || "Connection error. Retry again later.");
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return (
-    <div class="min-h-screen flex flex-col relative">
-      <main class="flex-grow relative flex flex-col items-center justify-center py-12">
+    <div class={styles.pageWrapper}>
+      <header class={styles.header}>
+        <A href="/" class={styles.logoText}>M.EX.</A>
+        <nav>
+          <A href="/" class={styles.navLink}>{t('nav.home')}</A>
+        </nav>
+      </header>
+
+      <main class={styles.mainContent}>
         <div 
-          class="absolute inset-0 bg-cover bg-center z-0"
+          class={styles.bgWrapper}
           style={{ "background-image": "url('https://images.unsplash.com/photo-1620215165604-1b157cb7a60b?q=80&w=1600&auto=format&fit=crop')" }}
         >
-          <div class="absolute inset-0 bg-white/70 backdrop-blur-[2px]"></div>
+          <div class={styles.overlay}></div>
         </div>
 
-        <div class="relative z-10 w-full max-w-md flex flex-col items-center text-center px-4">
-          <div class="w-12 h-12 rounded-full bg-gray-300 flex items-center justify-center font-bold text-2xl text-gray-600 shadow-inner mb-4">
-            M
-          </div>
-          <h1 class="text-3xl font-bold text-gray-900 mb-2 tracking-wide">MARBLE EXCHANGE</h1>
-          <h2 class="text-xl font-medium text-gray-800 mb-8">{t('auth.registerSubtitle')}</h2>
+        <div class={styles.formContainer}>
+          <h1 class={styles.title}>M.EX.</h1>
+          <h2 class={styles.subtitle}>{t('auth.registerSubtitle')}</h2>
 
-          <form class="w-full flex flex-col gap-4" onSubmit={(e) => e.preventDefault()}>
+          {/* Error box */}
+          <Show when={error()}>
+            <div class="mb-4 text-red-500 text-sm tracking-widest uppercase font-medium text-center">
+              {error()}
+            </div>
+          </Show>
+
+          {/* Registration form */}
+          <form class={styles.form} onSubmit={handleRegister}>
             <input 
               type="text" 
               placeholder={t('auth.name')} 
-              class="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-600 shadow-sm"
+              class={`${styles.input} ${error() && name().length < 2 ? 'border-red-500' : ''}`}
+              value={name()}
+              onInput={(e) => setName(e.currentTarget.value)}
+              required
             />
             <input 
-              type="email" 
-              placeholder={t('auth.email')} 
-              class="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-600 shadow-sm"
+              type="username" 
+              placeholder={t('auth.username')} 
+              class={`${styles.input} ${error() /*&& !username().includes('@')*/ ? 'border-red-500' : ''}`}
+              value={username()}
+              onInput={(e) => setUsername(e.currentTarget.value)}
+              required
             />
             <input 
               type="password" 
               placeholder={t('auth.password')} 
-              class="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-600 shadow-sm"
+              class={`${styles.input} ${error() && password().length > 0 && password().length < 8 ? 'border-red-500' : ''}`}
+              value={password()}
+              onInput={(e) => setPassword(e.currentTarget.value)}
+              required
+              minlength="8"
             />
             
-            <div class="flex items-center mt-2">
-              <button 
-                type="submit" 
-                class="bg-blue-800 hover:bg-blue-900 text-white px-8 py-2.5 rounded-md font-semibold w-full transition-colors shadow-md"
-              >
-                {t('auth.registerBtn')}
+            <div class={styles.actions}>
+              <button type="submit" class={styles.submitBtn} disabled={isLoading()}>
+                {isLoading() ? 'Registering...' : t('auth.registerBtn')}
               </button>
             </div>
           </form>
 
-          <p class="mt-8 text-sm font-medium text-gray-800">
-            {t('auth.hasAccount')} <A href="/login" class="text-blue-800 hover:underline">{t('auth.loginLink')}</A>
+          <p class={styles.footerText}>
+            {t('auth.hasAccount')} 
+            <A href="/login" class={styles.registerLink}>{t('auth.loginLink')}</A>
           </p>
         </div>
       </main>

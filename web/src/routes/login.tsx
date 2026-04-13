@@ -40,7 +40,7 @@ const Login: Component = () => {
     setIsLoading(true);
 
     try {
-      const response = await fetch("https://a770dbb4-5041-4cfb-a9b7-9ddf5b97bc93.mock.pstmn.io/session", {
+      const response = await fetch(`${import.meta.env.VITE_API_HOST}/session`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

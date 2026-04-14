@@ -8,16 +8,16 @@ const Register: Component = () => {
   // Navigator
   const navigate = useNavigate();
 
-  // Registration data
+  // Form data
   const [name, setName] = createSignal("");
   const [username, setUsername] = createSignal("");
   const [password, setPassword] = createSignal("");
 
-  // Registration status
+  // Form status
   const [error, setError] = createSignal("");
   const [isLoading, setIsLoading] = createSignal(false);
 
-  // Registation data validation
+  // Form data validation
   const validateForm = () => {
     if (name().trim().length < 2) {
       setError("Invalid name");
@@ -36,7 +36,7 @@ const Register: Component = () => {
     return true;
   };
 
-  // Registration action
+  // Form action
   const handleRegister = async (e: Event) => {
     e.preventDefault();
     if (!validateForm()) return;

@@ -9,15 +9,15 @@ const Login: Component = () => {
   // Navigator
   const navigate = useNavigate();
 
-  // Login data
+  // Form data
   const [username, setUsername] = createSignal("");
   const [password, setPassword] = createSignal("");
 
-  // Login status
+  // Form status
   const [error, setError] = createSignal("");
   const [isLoading, setIsLoading] = createSignal(false);
 
-  // Login data validation
+  // Form data validation
   const validateForm = () => {
     // if (!username().includes("@")) {
     //   setError("Invalid username");
@@ -32,7 +32,7 @@ const Login: Component = () => {
     return true;
   };
 
-  // Login action
+  // Form action
   const handleLogin = async (e: Event) => {
     e.preventDefault();
     if (!validateForm()) return;

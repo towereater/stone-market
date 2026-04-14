@@ -9,6 +9,10 @@ import ProfileLayout from "@layouts/ProfileLayout";
 import Home from "@pages/Home";
 import Login from "@pages/access/Login";
 import Register from "@pages/access/Register";
+import CreateListing from "./pages/CreateListing";
+import Buy from "./pages/Buy";
+import About from "./pages/About";
+import NotFound from "./pages/NotFound";
 
 import "@styles/global.css";
 
@@ -24,6 +28,10 @@ export default function App() {
     >
       <Route path="/" component={MainLayout}>
         <Route path="/" component={Home} />
+        <Route path="/create-listing" component={CreateListing} />
+        <Route path="/buy" component={Buy} />
+        <Route path="/about" component={About} />
+        <Route path="*404" component={NotFound} />
       </Route>
 
       <Route path="/login" component={AccessLayout}>
@@ -34,7 +42,12 @@ export default function App() {
       </Route>
 
       <Route path="/profile" component={ProfileLayout}>
-        
+        <Route path="/" component={Register} />
+        <Route path="/active-listings" component={Register} />
+        <Route path="/received-orders" component={Register} />
+        <Route path="/history" component={Register} />
+        <Route path="/active-orders" component={Register} />
+        <Route path="/orders-history" component={Register} />
       </Route>
     </Router>
   );

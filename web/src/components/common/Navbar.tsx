@@ -29,7 +29,7 @@ const Navbar: Component = () => {
         <A href="/buy" class={styles.link} activeClass={styles.linkActive}>
           {t('nav.buy')}
         </A>
-        <A href="/sell" class={styles.link} activeClass={styles.linkActive}>
+        <A href="/create-listing" class={styles.link} activeClass={styles.linkActive}>
           {t('nav.sell')}
         </A>
         <A href="/about" class={styles.link} activeClass={styles.linkActive}>
@@ -60,6 +60,9 @@ const Navbar: Component = () => {
             </>
           }
         >
+          <A href="/profile" class={styles.btnRegister}>
+            {t('nav.profile').toUpperCase()}
+          </A>
           <button onClick={handleLogout} class={styles.btnLogin}>
             Logout
           </button>

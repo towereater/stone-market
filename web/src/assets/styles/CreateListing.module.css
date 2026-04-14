@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+.pageWrapper {
+  @apply min-h-screen bg-[#e5e5e5] flex flex-col font-sans text-gray-900;
+}
+
+.contentContainer {
+  @apply max-w-5xl mx-auto w-full px-8 py-12 flex-1;
+}
+
+.pageTitle {
+  @apply text-3xl font-bold mb-10;
+}
+
+.formGrid {
+  @apply grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8;
+}
+
+.formGroup {
+  @apply flex flex-col gap-2;
+}
+
+.label {
+  @apply text-sm font-bold text-gray-800;
+}
+
+.input {
+  @apply w-full px-4 py-3 rounded bg-white border border-transparent focus:border-[#1e3a8a] focus:outline-none transition-colors text-sm;
+}
+
+/* Images */
+.imageSection {
+  @apply col-span-1 md:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-12 mt-4;
+}
+
+.imagePreviewBox {
+  @apply flex flex-col items-center gap-2;
+}
+
+.imagePlaceholder {
+  @apply w-48 h-48 bg-gray-300 object-cover shadow-md;
+}
+
+.uploadBox {
+  @apply flex flex-col items-center justify-center gap-4 cursor-pointer hover:text-[#1e3a8a] transition-colors;
+}
+
+.uploadIcon {
+  @apply text-4xl;
+}
+
+/* Page split*/
+.sizeGroup {
+  @apply col-span-1 md:col-span-2 flex flex-col gap-2;
+}
+
+.sizeInputs {
+  @apply grid grid-cols-2 gap-4;
+}
+
+/* Notes */
+.fullWidthGroup {
+  @apply col-span-1 md:col-span-2 flex flex-col gap-2;
+}
+
+/* Documents */
+.docsSection {
+  @apply col-span-1 md:col-span-2 flex items-center gap-8 mt-4;
+}
+
+.docItem {
+  @apply flex flex-col items-center gap-1;
+}
+
+.pdfIcon {
+  @apply w-12 h-16 border-2 border-red-500 rounded text-red-500 flex items-center justify-center font-bold text-xs bg-white;
+}
+
+.docName {
+  @apply text-xs font-medium text-gray-600;
+}
+
+/* Buttons */
+.actions {
+  @apply col-span-1 md:col-span-2 flex justify-center gap-6 mt-12;
+}
+
+.btnPrimary {
+  @apply bg-[#1e3a8a] text-white px-12 py-3 rounded text-sm font-medium hover:bg-blue-800 transition-colors w-48;
+}
+
+.btnSecondary {
+  @apply border border-red-400 text-red-500 px-12 py-3 rounded text-sm font-medium hover:bg-red-50 transition-colors bg-transparent w-48;
+}

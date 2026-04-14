@@ -1,11 +1,11 @@
 import { Component } from "solid-js";
 import { t } from "@store/i18n";
-import { FeaturedItemType } from "@classes/types";
+import { FeaturedItem } from "@classes/FeaturedItem";
 
 import styles from "@styles/FeaturedItemCard.module.css";
 
 interface Props {
-  item: FeaturedItemType;
+  item: FeaturedItem;
 }
 
 const FeaturedItemCard: Component<Props> = (props) => {

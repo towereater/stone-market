@@ -1,4 +1,4 @@
-export interface FeaturedItemType {
+export interface FeaturedItem {
   id: number;
   name: string;
   dim: string;

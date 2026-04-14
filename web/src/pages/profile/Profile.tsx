@@ -1,4 +1,6 @@
 import { Component, createSignal } from "solid-js";
+import { Button } from "@/components/ui/Button";
+import { Input } from "@/components/ui/Input";
 
 import styles from "@styles/Profile.module.css";
 
@@ -17,7 +19,7 @@ const Profile: Component = () => {
         phone: phone()
     });
 
-    // TODO: Chiamata API PUT per aggiornare il profilo
+    // TODO: PERFORM API CALL
     
     alert("Profile updated successfully!");
   };
@@ -32,28 +34,25 @@ const Profile: Component = () => {
           <h2 class={styles.sectionTitle}>Personal Information</h2>
           <div class={styles.formGrid}>
             <div class={styles.formGroup}>
-              <label class={styles.label}>Full Name</label>
-              <input 
-                type="text" 
-                class={styles.input} 
-                value={name()}
-                onInput={(e) => setName(e.currentTarget.value)}
+              <Input
+                label="Full Name" 
+                value={name()} 
+                onInput={(e) => setName(e.currentTarget.value)} 
               />
             </div>
             <div class={styles.formGroup}>
-              <label class={styles.label}>Email Address</label>
-              <input 
-                type="email" 
-                class={styles.input} 
+              <Input
+                label="Email Address"
+                type="email"
                 value={email()}
                 disabled
+                class="bg-gray-100 cursor-not-allowed text-gray-500"
               />
             </div>
             <div class={styles.formGroup}>
-              <label class={styles.label}>Phone Number</label>
-              <input 
-                type="tel" 
-                class={styles.input} 
+              <Input
+                label="Phone Number"
+                type="tel"
                 value={phone()}
                 onInput={(e) => setPhone(e.currentTarget.value)}
               />
@@ -63,19 +62,17 @@ const Profile: Component = () => {
           <h2 class={styles.sectionTitle}>Business Details</h2>
           <div class={styles.formGrid}>
             <div class={styles.formGroup}>
-              <label class={styles.label}>Company Name</label>
-              <input 
-                type="text" 
-                class={styles.input} 
+              <Input
+                label="Company Name"
                 value={company()}
                 onInput={(e) => setCompany(e.currentTarget.value)}
               />
             </div>
           </div>
 
-          <button type="submit" class={styles.btnSave}>
+          <Button type="submit">
             Save Changes
-          </button>
+          </Button>
         </form>
       </div>
     </div>

@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+.layoutWrapper {
+  @apply min-h-screen bg-[#e5e5e5] flex flex-col font-sans text-gray-900;
+}
+
+.header {
+  @apply w-full bg-[#f3f4f6] py-4 px-8 flex items-center justify-between border-b border-gray-300;
+}
+
+.logo {
+  @apply w-10 h-10 rounded-full bg-gray-300 flex items-center justify-center font-bold text-gray-600; /* Placeholder per il logo tondo */
+}
+
+.navLinks {
+  @apply hidden md:flex gap-8 font-bold text-sm text-[#1e3a8a];
+}
+
+.headerActions {
+  @apply flex gap-4;
+}
+
+.btnPrimary {
+  @apply bg-[#1e3a8a] text-white px-6 py-2 rounded text-sm font-medium hover:bg-blue-800 transition-colors;
+}
+
+.btnSecondary {
+  @apply border border-[#1e3a8a] text-[#1e3a8a] px-6 py-2 rounded text-sm font-medium hover:bg-blue-50 transition-colors bg-transparent;
+}
+
+.mainContainer {
+  @apply flex flex-1 w-full;
+}
+
+.sidebar {
+  @apply w-64 border-r border-gray-300 p-8 flex flex-col gap-6;
+}
+
+.menuTitle {
+  @apply text-2xl font-bold mb-4;
+}
+
+.menuSection {
+  @apply flex flex-col gap-2;
+}
+
+.sectionTitle {
+  @apply font-bold text-sm mb-1;
+}
+
+.menuList {
+  @apply flex flex-col gap-2 pl-2 text-sm;
+}
+
+.menuItem {
+  @apply hover:text-[#1e3a8a] transition-colors cursor-pointer;
+}
+
+.menuItemActive {
+  @apply bg-gray-300 px-3 py-1.5 rounded font-medium -ml-3;
+}
+
+.logoutBtn {
+  @apply mt-auto text-left text-[#1e3a8a] text-sm hover:underline font-medium;
+}
+
+.contentArea {
+  @apply flex-1 p-8;
+}

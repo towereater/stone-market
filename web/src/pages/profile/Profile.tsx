@@ -70,7 +70,7 @@ const Profile: Component = () => {
             </div>
           </div>
 
-          <Button type="submit">
+          <Button class="btn-primary" type="submit">
             Save Changes
           </Button>
         </form>

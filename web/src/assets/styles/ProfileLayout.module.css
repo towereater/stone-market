@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 .layoutWrapper {
-  @apply min-h-screen bg-[#e5e5e5] flex flex-col font-sans text-gray-900;
+  @apply min-h-screen bg-[#f5f5f5] flex flex-col font-sans text-gray-900;
 }
 
 .header {

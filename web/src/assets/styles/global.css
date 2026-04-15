@@ -3,11 +3,15 @@
 @layer components {
   /* Buttons */
   .btn-primary {
-    @apply bg-[#1e3a8a] text-white px-8 py-3 rounded text-sm font-medium hover:bg-blue-800 transition-colors;
+    @apply bg-[#004e89] text-[#f5f5f5] px-3 py-2 rounded-lg text-sm font-light hover:bg-[#1f6397] transition-colors;
   }
   
   .btn-secondary {
-    @apply border border-gray-400 text-gray-700 px-8 py-3 rounded text-sm font-medium hover:bg-gray-50 transition-colors bg-white;
+    @apply border border-[#004e89] bg-[#f5f5f5] text-[#004e89] px-3 py-2 rounded-lg text-sm font-light hover:bg-[#e0e0e0] transition-colors;
+  }
+  
+  .btn-cancel {
+    @apply border border-[#890000] bg-[#f5f5f5] text-[#890000] px-3 py-2 rounded-lg text-sm font-light hover:bg-[#e6d1d1] transition-colors;
   }
 
   /* Form and input */

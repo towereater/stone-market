@@ -4,13 +4,15 @@ import { locale, setLocale, t, Locale } from "@store/i18n";
 import { isAuthenticated, logout } from "@store/auth";
 
 import styles from "@styles/Navbar.module.css";
+import { Button } from "../ui/Button";
 
 const Navbar: Component = () => {
   const navigate = useNavigate();
 
   const handleLogout = () => {
     logout();
-    navigate("/login");
+
+    navigate("/");
   };
 
   return (
@@ -60,12 +62,12 @@ const Navbar: Component = () => {
             </>
           }
         >
-          <A href="/profile" class={styles.btnRegister}>
+          <A href="/profile" class={styles.navLinks + " " + styles.link}>
             {t('nav.profile').toUpperCase()}
           </A>
-          <button onClick={handleLogout} class={styles.btnLogin}>
+          <Button class="btn-secondary" onClick={handleLogout}>
             Logout
-          </button>
+          </Button>
         </Show>
       </div>
     </header>

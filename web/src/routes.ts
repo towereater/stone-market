@@ -71,6 +71,10 @@ export const routes: RouteDefinition[] = [
       {
         path: "/history",
         component: lazy(() => import("@pages/profile/ListingsHistory")),
+      },
+      {
+        path: "/orders",
+        component: lazy(() => import("@pages/profile/OrdersHistory")),
       }
     ]
   }

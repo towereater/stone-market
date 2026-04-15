@@ -1,10 +1,22 @@
-import { Component } from "solid-js";
-import { useParams } from "@solidjs/router";
+import { Component, createSignal } from "solid-js";
+import { useNavigate,useParams } from "@solidjs/router";
 import { Button } from "@/components/ui/Button";
 
 const ListingDetail: Component = () => {
   // Path parameters extraction
   const params = useParams();
+
+  const navigate = useNavigate();
+  const [isOrdering, setIsOrdering] = createSignal(false);
+
+  const placeOrder = async () => {
+    setIsOrdering(true);
+    // TODO: REMOVE MOCK API CALL
+    await new Promise(r => setTimeout(r, 1000));
+    alert("Order placed successfully!");
+
+    navigate("/profile/orders");
+  };
 
   return (
     <div class="min-h-screen bg-white">
@@ -52,6 +64,16 @@ const ListingDetail: Component = () => {
             <div class="flex gap-4 mt-auto">
               <Button class="flex-1 py-4 text-base">Request Quote</Button>
               <Button variant="secondary" class="flex-1 py-4 text-base">Download PDF</Button>
+            </div>
+            <div class="flex gap-4 mt-auto">
+              <Button 
+                onClick={placeOrder} 
+                isLoading={isOrdering()} 
+                class="flex-1 py-4 text-base bg-green-600 hover:bg-green-700"
+              >
+                Place Order Now
+              </Button>
+              <Button variant="secondary" class="flex-1 py-4 text-base">Contact Seller</Button>
             </div>
           </div>
         </div>

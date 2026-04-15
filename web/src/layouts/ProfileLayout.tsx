@@ -33,7 +33,7 @@ const ProfileLayout: Component<any> = (props) => {
             <h3 class={styles.sectionTitle}>Buy</h3>
             <div class={styles.menuList}>
               <A href="/profile/active-orders" class={styles.menuItem}>Active Orders</A>
-              <A href="/profile/orders-history" class={styles.menuItem}>Orders History</A>
+              <A href="/profile/orders" class={styles.menuItem}>Orders History</A>
             </div>
           </div>
 

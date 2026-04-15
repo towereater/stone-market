@@ -10,46 +10,54 @@ export const routes: RouteDefinition[] = [
     path: "/",
     component: MainLayout,
     children: [
-        {
-            path: "/",
-            component: lazy(() => import("@pages/Home")),
-        },
-        {
-            path: "/create-listing",
-            component: lazy(() => import("@pages/CreateListing")),
-        },
-        {
-            path: "/buy",
-            component: lazy(() => import("@pages/Buy")),
-        },
-        {
-            path: "/about",
-            component: lazy(() => import("@pages/About")),
-        },
-        {
-            path: "*404",
-            component: lazy(() => import("@pages/NotFound")),
-        }
+      {
+        path: "/",
+        component: lazy(() => import("@pages/Home")),
+      },
+      {
+        path: "/create-listing",
+        component: lazy(() => import("@pages/CreateListing")),
+      },
+      {
+        path: "/search",
+        component: lazy(() => import("@/pages/ListingsSearch")),
+      },
+      {
+        path: "/listings/:id",
+        component: lazy(() => import("@/pages/ListingDetail")),
+      },
+      {
+        path: "/buy",
+        component: lazy(() => import("@pages/Buy")),
+      },
+      {
+        path: "/about",
+        component: lazy(() => import("@pages/About")),
+      },
+      {
+        path: "*404",
+        component: lazy(() => import("@pages/NotFound")),
+      }
     ]
   },
   {
     path: "/login",
     component: AccessLayout,
     children: [
-        {
-            path: "/",
-            component: lazy(() => import("@pages/access/Login")),
-        }
+      {
+        path: "/",
+        component: lazy(() => import("@pages/access/Login")),
+      }
     ]
   },
   {
     path: "/register",
     component: AccessLayout,
     children: [
-        {
-            path: "/",
-            component: lazy(() => import("@pages/access/Register")),
-        }
+      {
+        path: "/",
+        component: lazy(() => import("@pages/access/Register")),
+      }
     ]
   },
   {

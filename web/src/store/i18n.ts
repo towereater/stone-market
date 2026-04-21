@@ -4,7 +4,15 @@ export type Locale = "en" | "it";
 export const [locale, setLocale] = createSignal<Locale>("en");
 
 interface Dictionary {
-  nav: { home: string; buy: string; sell: string; about: string; register: string; login: string };
+  nav: {
+    home: string;
+    buy: string;
+    sell: string;
+    about: string;
+    register: string;
+    login: string;
+    logout: string;
+  };
   hero: { title: string; subtitle: string; buy: string; sell: string };
   featured: { title: string; dimensions: string; seller: string };
   auth: {
@@ -25,7 +33,15 @@ interface Dictionary {
 
 const dictionaries: Record<Locale, Dictionary> = {
   en: {
-    nav: { home: "HOME", buy: "BUY", sell: "SELL", about: "ABOUT", register: "Register", login: "Login" },
+    nav: {
+      home: "Home",
+      buy: "Buy",
+      sell: "Sell",
+      about: "About",
+      register: "Register",
+      login: "Login",
+      logout: "Logout"
+    },
     hero: { title: "MARBLE EXCHANGE", subtitle: "Curated Slabs for Visionary Designs", buy: "BUY MARBLE", sell: "SELL MARBLE" },
     featured: { title: "FEATURED SALES", dimensions: "Dimensions", seller: "Seller" },
     auth: {
@@ -44,7 +60,15 @@ const dictionaries: Record<Locale, Dictionary> = {
     }
   },
   it: {
-    nav: { home: "HOME", buy: "ACQUISTA", sell: "VENDI", about: "CHI SIAMO", register: "Registrati", login: "Accedi" },
+    nav: {
+      home: "Home",
+      buy: "Acquista",
+      sell: "Vendi",
+      about: "Chi siamo",
+      register: "Registrati",
+      login: "Accedi",
+      logout: "Esci"
+    },
     hero: { title: "MARBLE EXCHANGE", subtitle: "Lastre Selezionate per Design Visionari", buy: "COMPRA MARMO", sell: "VENDI MARMO" },
     featured: { title: "VENDITE IN EVIDENZA", dimensions: "Dimensioni", seller: "Venditore" },
     auth: {

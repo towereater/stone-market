@@ -17,7 +17,7 @@
       "@images/*": ["./src/assets/images/*"],
       "@styles/*": ["./src/assets/styles/*"],
       "@components/*": ["./src/components/*"],
-      "@layouts/*": ["./src/layouts/*"],
+      "@layouts/*": ["./src/components/layouts/*"],
       "@classes/*": ["./src/lib/classes/*"],
       "@pages/*": ["./src/pages/*"],
       "@store/*": ["./src/store/*"]

@@ -1,6 +1,6 @@
 import { Component } from "solid-js";
 import { A } from "@solidjs/router";
-import Navbar from "@/components/common/Navbar";
+import Navbar from "@components/shared/Navbar";
 
 import styles from "@styles/ProfileLayout.module.css"
 

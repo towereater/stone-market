@@ -1,5 +1,5 @@
 import { Component } from "solid-js";
-import Navbar from "@/components/common/Navbar";
+import Navbar from "@components/shared/Navbar";
 
 const MainLayout: Component<any> = (props) => {
   return (

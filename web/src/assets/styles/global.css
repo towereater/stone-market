@@ -1,17 +1,31 @@
 @import "tailwindcss";
 
+@theme {
+  /* Background */
+  --color-primary: #edeff0;
+  --color-secondary: #bedeff;
+  --color-accent: #004e89;
+  
+  /* Text */
+  --color-text-primary: #004e89;
+  --color-text-secondary: #004e89;
+  --color-text-accent: #000d1f;
+
+  /*https://www.canva.com/design/DAHHBcZ-N7I/KaCHI5gbuLvvVFKlveiO5w/edit?ui=eyJFIjp7Im0iOnRydWUsIkE_IjoiQSIsIkEiOiJibHVlIn0sIkciOnsiQiI6dHJ1ZX19*/
+}
+
 @layer components {
   /* Buttons */
   .btn-primary {
-    @apply bg-[#004e89] text-[#f5f5f5] px-3 py-2 rounded-lg text-sm font-light hover:bg-[#1f6397] transition-colors;
+      @apply border border-accent bg-primary text-accent px-3 py-2 rounded-lg text-sm font-light hover:bg-[#c2c9cc] transition-colors;
   }
-  
+
   .btn-secondary {
-    @apply border border-[#004e89] bg-[#f5f5f5] text-[#004e89] px-3 py-2 rounded-lg text-sm font-light hover:bg-[#e0e0e0] transition-colors;
+      @apply bg-accent text-primary px-3 py-2 rounded-lg text-sm font-light hover:bg-[#002c51] transition-colors;
   }
-  
+
   .btn-cancel {
-    @apply border border-[#890000] bg-[#f5f5f5] text-[#890000] px-3 py-2 rounded-lg text-sm font-light hover:bg-[#e6d1d1] transition-colors;
+      @apply border border-[#890000] bg-primary text-[#890000] px-3 py-2 rounded-lg text-sm font-light hover:bg-[#e6d1d1] transition-colors;
   }
 
   /* Form and input */

@@ -1,6 +1,6 @@
 import { Component, For } from "solid-js";
 import { t } from "@store/i18n";
-import FeaturedItemCard from "@components/features/FeaturedItemCard";
+import FeaturedItemCard from "@components/Home/FeaturedItemCard";
 import { FeaturedItem } from "@classes/FeaturedItem";
 
 import styles from "@styles/FeaturedSales.module.css";

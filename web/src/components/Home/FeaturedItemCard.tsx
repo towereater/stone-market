@@ -4,11 +4,11 @@ import { FeaturedItem } from "@classes/FeaturedItem";
 
 import styles from "@styles/FeaturedItemCard.module.css";
 
-interface Props {
+interface FeaturedItemCardProps {
   item: FeaturedItem;
 }
 
-const FeaturedItemCard: Component<Props> = (props) => {
+const FeaturedItemCard: Component<FeaturedItemCardProps> = (props) => {
   return (
     <div class={styles.card}>
       <div class={styles.imgWrapper}>

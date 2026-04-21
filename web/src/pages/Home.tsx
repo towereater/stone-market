@@ -1,6 +1,6 @@
 import { Component } from "solid-js";
-import Hero from "@components/features/Hero";
-import FeaturedSales from "@components/features/FeaturedSales";
+import Hero from "@components/Home/Hero";
+import FeaturedSales from "@components/Home/FeaturedSales";
 
 const Home: Component = () => {
   return (

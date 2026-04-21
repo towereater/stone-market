@@ -18,9 +18,9 @@
       "@styles/*": ["./src/assets/styles/*"],
       "@components/*": ["./src/components/*"],
       "@layouts/*": ["./src/layouts/*"],
+      "@classes/*": ["./src/lib/classes/*"],
       "@pages/*": ["./src/pages/*"],
-      "@store/*": ["./src/store/*"],
-      "@classes/*": ["./src/classes/*"]
+      "@store/*": ["./src/store/*"]
     }
   }
 }

@@ -3,11 +3,21 @@ import { A, useNavigate } from "@solidjs/router";
 import { locale, setLocale, t, Locale } from "@store/i18n";
 import { isAuthenticated, logout } from "@store/auth";
 
+import { Button } from "@components/ui/Button";
+import { NavbarLink } from "@components/ui/NavbarLink";
+
 import styles from "@styles/Navbar.module.css";
-import { Button } from "../ui/Button";
 
 const Navbar: Component = () => {
   const navigate = useNavigate();
+
+  const handleLogin = () => {
+    navigate("/login");
+  };
+
+  const handleRegister = () => {
+    navigate("/register");
+  };
 
   const handleLogout = () => {
     logout();
@@ -25,18 +35,18 @@ const Navbar: Component = () => {
       </A>
 
       <nav class={styles.navLinks}>
-        <A href="/" class={styles.link} activeClass={styles.linkActive}>
-          {t('nav.home')}
-        </A>
-        <A href="/buy" class={styles.link} activeClass={styles.linkActive}>
-          {t('nav.buy')}
-        </A>
-        <A href="/create-listing" class={styles.link} activeClass={styles.linkActive}>
-          {t('nav.sell')}
-        </A>
-        <A href="/about" class={styles.link} activeClass={styles.linkActive}>
-          {t('nav.about')}
-        </A>
+        <NavbarLink href="/">
+          {t('nav.home').toUpperCase()}
+        </NavbarLink>
+        <NavbarLink href="/buy">
+          {t('nav.buy').toUpperCase()}
+        </NavbarLink>
+        <NavbarLink href="/create-listing">
+          {t('nav.sell').toUpperCase()}
+        </NavbarLink>
+        <NavbarLink href="/about">
+          {t('nav.about').toUpperCase()}
+        </NavbarLink>
       </nav>
 
       <div class={styles.actionsContainer}>
@@ -49,24 +59,24 @@ const Navbar: Component = () => {
           <option value="it" class="text-black">IT</option>
         </select>
 
-        <Show 
+        <Show
           when={isAuthenticated()} 
           fallback={
             <>
-              <A href="/register" class={styles.btnRegister}>
-                {t('nav.register').toUpperCase()}
-              </A>
-              <A href="/login" class={styles.btnLogin}>
-                {t('nav.login').toUpperCase()}
-              </A>
+              <Button variant="secondary" onClick={handleRegister}>
+                {t('nav.register')}
+              </Button>
+              <Button variant="primary" onClick={handleLogin}>
+                {t('nav.login')}
+              </Button>
             </>
           }
         >
-          <A href="/profile" class={styles.navLinks + " " + styles.link}>
+          <NavbarLink href="/profile">
             {t('nav.profile').toUpperCase()}
-          </A>
-          <Button class="btn-secondary" onClick={handleLogout}>
-            Logout
+          </NavbarLink>
+          <Button variant="primary" onClick={handleLogout}>
+            {t('nav.logout')}
           </Button>
         </Show>
       </div>

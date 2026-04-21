@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 .header {
-  @apply absolute top-0 left-0 w-full py-6 px-10 flex items-center justify-between z-50 bg-transparent text-[#004E89];
+  @apply absolute top-0 left-0 w-full py-6 px-10 flex items-center justify-between z-50 text-[#004E89];
 }
 
 .logoText {
@@ -12,26 +12,10 @@
   @apply hidden md:flex gap-10 font-medium text-sm tracking-widest;
 }
 
-.link {
-  @apply hover:text-gray-300 transition-colors;
-}
-
-.linkActive {
-  @apply border-b border-[#004E89] pb-1;
-}
-
 .actionsContainer {
   @apply flex items-center gap-6;
 }
 
 .languageSelect {
   @apply bg-transparent text-sm border-none cursor-pointer outline-none font-medium tracking-widest text-[#004E89] appearance-none;
-}
-
-.btnRegister {
-  @apply bg-[#004E89] text-black px-6 py-2.5 text-xs font-bold tracking-widest hover:bg-gray-200 transition-colors;
-}
-
-.btnLogin {
-  @apply border border-[#004E89] text-[#004E89] px-6 py-2.5 text-xs font-bold tracking-widest hover:bg-[#004E89]/10 transition-colors;
 }

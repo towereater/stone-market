@@ -1,6 +1,7 @@
 import { Component } from "solid-js";
 import { A } from "@solidjs/router";
-import { Button } from "./Button";
+
+import { Button } from "@components/ui/Button";
 
 interface ListingCardProps {
   id: string | number;

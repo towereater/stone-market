@@ -4,6 +4,8 @@ import { Suspense } from "solid-js";
 
 import { routes } from "./routes";
 
+import "@styles/global.css";
+
 export default function App() {
   return (
     <Router

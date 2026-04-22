@@ -11,6 +11,7 @@ interface Dictionary {
     about: string;
     register: string;
     login: string;
+    profile: string;
     logout: string;
   };
   hero: { title: string; subtitle: string; buy: string; sell: string };
@@ -40,6 +41,7 @@ const dictionaries: Record<Locale, Dictionary> = {
       about: "About",
       register: "Register",
       login: "Login",
+      profile: "Profile",
       logout: "Logout"
     },
     hero: { title: "MARBLE EXCHANGE", subtitle: "Curated Slabs for Visionary Designs", buy: "BUY MARBLE", sell: "SELL MARBLE" },
@@ -67,6 +69,7 @@ const dictionaries: Record<Locale, Dictionary> = {
       about: "Chi siamo",
       register: "Registrati",
       login: "Accedi",
+      profile: "Profilo",
       logout: "Esci"
     },
     hero: { title: "MARBLE EXCHANGE", subtitle: "Lastre Selezionate per Design Visionari", buy: "COMPRA MARMO", sell: "VENDI MARMO" },

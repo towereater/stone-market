@@ -1,22 +1,9 @@
 @import "tailwindcss";
-
-@theme {
-  /* Background */
-  --color-primary: #edeff0;
-  --color-secondary: #bedeff;
-  --color-accent: #004e89;
-  
-  /* Text */
-  --color-text-primary: #004e89;
-  --color-text-secondary: #004e89;
-  --color-text-accent: #000d1f;
-
-  /*https://www.canva.com/design/DAHHBcZ-N7I/KaCHI5gbuLvvVFKlveiO5w/edit?ui=eyJFIjp7Im0iOnRydWUsIkE_IjoiQSIsIkEiOiJibHVlIn0sIkciOnsiQiI6dHJ1ZX19*/
-}
+@import "../themes/default.css" layer(theme);
 
 @layer components {
   /* Buttons */
-  .btn-primary {
+  /* .btn-primary {
       @apply border border-accent bg-primary text-accent px-3 py-2 rounded-lg text-sm font-light hover:bg-[#c2c9cc] transition-colors;
   }
 
@@ -26,7 +13,7 @@
 
   .btn-cancel {
       @apply border border-[#890000] bg-primary text-[#890000] px-3 py-2 rounded-lg text-sm font-light hover:bg-[#e6d1d1] transition-colors;
-  }
+  } */
 
   /* Form and input */
   .form-input {

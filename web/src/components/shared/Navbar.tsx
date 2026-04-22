@@ -1,4 +1,4 @@
-import { Component, Show } from "solid-js";
+import { Component, createSignal, onMount, Show } from "solid-js";
 import { A, useNavigate } from "@solidjs/router";
 import { locale, setLocale, t, Locale } from "@store/i18n";
 import { isAuthenticated, logout } from "@store/auth";
@@ -6,9 +6,14 @@ import { isAuthenticated, logout } from "@store/auth";
 import { Button } from "@components/ui/Button";
 import { NavbarLink } from "@components/ui/NavbarLink";
 
-import "@styles/global.css";
-
 const Navbar: Component = () => {
+  const [isAuth, setIsAuth] = createSignal(false);
+
+  onMount(() => {
+    const checkUser = isAuthenticated();
+    setIsAuth(checkUser);
+  });
+
   const navigate = useNavigate();
 
   const handleLogin = () => {
@@ -21,13 +26,16 @@ const Navbar: Component = () => {
 
   const handleLogout = () => {
     logout();
+    
+    const checkUser = isAuthenticated();
+    setIsAuth(checkUser);
 
     navigate("/");
   };
 
   return (
     <header class="absolute top-0 left-0 w-full py-6 px-10 flex items-center justify-between z-50 text-accent">
-      
+
       <A href="/" class="flex items-center">
         <div class="font-bold text-2xl tracking-[0.2em]">
           M
@@ -50,17 +58,17 @@ const Navbar: Component = () => {
       </nav>
 
       <div class="flex items-center gap-6">
-        <select 
+        <select
           class="text-sm cursor-pointer font-medium tracking-widest text-accent"
-          value={locale()} 
+          value={locale()}
           onChange={(e) => setLocale(e.currentTarget.value as Locale)}
         >
           <option value="en" class="text-accent">EN</option>
           <option value="it" class="text-accent">IT</option>
         </select>
-      {/* 
+
         <Show
-          when={isAuthenticated()} 
+          when={isAuth()}
           fallback={
             <>
               <Button variant="secondary" onClick={handleRegister}>
@@ -78,7 +86,7 @@ const Navbar: Component = () => {
           <Button variant="primary" onClick={handleLogout}>
             {t('nav.logout')}
           </Button>
-        </Show> */}
+        </Show>
       </div>
     </header>
   );

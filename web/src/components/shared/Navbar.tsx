@@ -6,7 +6,7 @@ import { isAuthenticated, logout } from "@store/auth";
 import { Button } from "@components/ui/Button";
 import { NavbarLink } from "@components/ui/NavbarLink";
 
-import styles from "@styles/Navbar.module.css";
+import "@styles/global.css";
 
 const Navbar: Component = () => {
   const navigate = useNavigate();
@@ -26,15 +26,15 @@ const Navbar: Component = () => {
   };
 
   return (
-    <header class={styles.header}>
+    <header class="absolute top-0 left-0 w-full py-6 px-10 flex items-center justify-between z-50 text-accent">
       
-      <A href="/" class="flex items-center gap-2">
-        <div class={styles.logoText}>
+      <A href="/" class="flex items-center">
+        <div class="font-bold text-2xl tracking-[0.2em]">
           M
         </div>
       </A>
 
-      <nav class={styles.navLinks}>
+      <nav class="md:flex gap-10 font-medium text-sm tracking-widest">
         <NavbarLink href="/">
           {t('nav.home').toUpperCase()}
         </NavbarLink>
@@ -49,16 +49,16 @@ const Navbar: Component = () => {
         </NavbarLink>
       </nav>
 
-      <div class={styles.actionsContainer}>
+      <div class="flex items-center gap-6">
         <select 
-          class={styles.languageSelect}
+          class="text-sm cursor-pointer font-medium tracking-widest text-accent"
           value={locale()} 
           onChange={(e) => setLocale(e.currentTarget.value as Locale)}
         >
-          <option value="en" class="text-black">EN</option>
-          <option value="it" class="text-black">IT</option>
+          <option value="en" class="text-accent">EN</option>
+          <option value="it" class="text-accent">IT</option>
         </select>
-
+      {/* 
         <Show
           when={isAuthenticated()} 
           fallback={
@@ -78,7 +78,7 @@ const Navbar: Component = () => {
           <Button variant="primary" onClick={handleLogout}>
             {t('nav.logout')}
           </Button>
-        </Show>
+        </Show> */}
       </div>
     </header>
   );

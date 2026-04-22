@@ -1,6 +1,6 @@
 import { Component, JSX, Show, splitProps } from "solid-js";
 
-import styles from "@styles/Button.module.css";
+import "@styles/Button.module.css";
 
 interface ButtonProps extends JSX.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: "primary" | "secondary" | "cancel";
@@ -10,7 +10,7 @@ interface ButtonProps extends JSX.ButtonHTMLAttributes<HTMLButtonElement> {
 export const Button: Component<ButtonProps> = (props) => {
   const [local, others] = splitProps(props, ["variant", "class", "children", "isLoading"]);
 
-  const baseClass = local.variant === "secondary" ? styles.btnSecondary : local.variant === "cancel" ? styles.btnCancel : styles.btnPrimary;
+  const baseClass = local.variant === "secondary" ? "btn-secondary" : local.variant === "cancel" ? "btn-cancel" : "btn-primary";
 
   return (
     <button 

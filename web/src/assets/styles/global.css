@@ -3,7 +3,7 @@
 
 @layer components {
   /* Buttons */
-  /* .btn-primary {
+  .btn-primary {
       @apply border border-accent bg-primary text-accent px-3 py-2 rounded-lg text-sm font-light hover:bg-[#c2c9cc] transition-colors;
   }
 
@@ -13,7 +13,7 @@
 
   .btn-cancel {
       @apply border border-[#890000] bg-primary text-[#890000] px-3 py-2 rounded-lg text-sm font-light hover:bg-[#e6d1d1] transition-colors;
-  } */
+  }
 
   /* Form and input */
   .form-input {

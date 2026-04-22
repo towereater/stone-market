@@ -1,7 +1,5 @@
 import { Component, JSX, Show, splitProps } from "solid-js";
 
-import "@styles/Button.module.css";
-
 interface ButtonProps extends JSX.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: "primary" | "secondary" | "cancel";
   isLoading?: boolean;

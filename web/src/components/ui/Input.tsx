@@ -1,4 +1,4 @@
-import { Component, JSX, splitProps } from "solid-js";
+import { Component, JSX, splitProps, createUniqueId } from "solid-js";
 
 interface InputProps extends JSX.InputHTMLAttributes<HTMLInputElement> {
   label: string;
@@ -7,7 +7,7 @@ interface InputProps extends JSX.InputHTMLAttributes<HTMLInputElement> {
 export const Input: Component<InputProps> = (props) => {
   const [local, others] = splitProps(props, ["label", "class", "id"]);
   
-  const inputId = local.id || `input-${Math.random().toString(36).substring(2, 9)}`;
+  const inputId = local.id || createUniqueId();
 
   return (
     <div class="flex flex-col gap-2">

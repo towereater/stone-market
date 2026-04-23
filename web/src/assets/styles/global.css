@@ -32,7 +32,7 @@
 
   /* Navbar */
   .navbar {
-    @apply absolute top-0 left-0 w-full bg-primary py-3 px-6 flex items-center justify-between;
+    @apply top-0 left-0 w-full bg-primary py-3 px-6 flex items-center justify-between;
   }
 
   /* Layout */

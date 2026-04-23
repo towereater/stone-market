@@ -9,7 +9,7 @@ export const NavbarLink: Component<NavbarLinkProps> = (props) => {
   const [local, _] = splitProps(props, ["href", "children", "class"]);
 
   return (
-    <A href={local.href} class="hover:text-[#c2c9cc] transition-colors">
+    <A href={local.href} class="text-accent hover:text-[#c2c9cc] transition-colors">
       {local.children}
     </A>
   );

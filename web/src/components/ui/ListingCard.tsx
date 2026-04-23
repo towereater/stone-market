@@ -23,7 +23,8 @@ export const ListingCard: Component<ListingCardProps> = (props) => {
         <div class="flex justify-between items-center mt-auto">
           <span class="text-sm font-medium">{props.slabs} slabs avail.</span>
           <A href={`/listings/${props.id}`}>
-            <Button variant="secondary" class="px-4 py-1 text-xs">View Detail</Button>
+            {/* <Button variant="secondary" class="px-4 py-1 text-xs">View Detail</Button> */}
+            View Detail
           </A>
         </div>
       </div>

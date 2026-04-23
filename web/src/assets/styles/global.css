@@ -1,27 +1,38 @@
 @import "tailwindcss";
 @import "../themes/default.css" layer(theme);
 
+@layer utilities {
+  .btn-base {
+    @apply px-3 py-2 h-8 rounded-lg font-medium text-sm transition-colors;
+  }
+}
+
 @layer components {
   /* Buttons */
   .btn-primary {
-      @apply border border-accent bg-primary text-accent px-3 py-2 rounded-lg text-sm font-light hover:bg-[#c2c9cc] transition-colors;
+      @apply px-3 py-2 h-8 rounded-lg font-medium text-sm transition-colors border border-accent bg-primary text-accent hover:bg-[#c2c9cc];
   }
 
   .btn-secondary {
-      @apply bg-accent text-primary px-3 py-2 rounded-lg text-sm font-light hover:bg-[#002c51] transition-colors;
+      @apply px-3 py-2 h-8 rounded-lg font-medium text-sm transition-colors bg-accent text-primary hover:bg-[#002c51];
   }
 
   .btn-cancel {
-      @apply border border-[#890000] bg-primary text-[#890000] px-3 py-2 rounded-lg text-sm font-light hover:bg-[#e6d1d1] transition-colors;
+      @apply px-3 py-2 h-8 rounded-lg font-medium text-sm transition-colors border border-[#890000] bg-primary text-[#890000] hover:bg-[#e6d1d1];
   }
 
   /* Form and input */
-  .form-input {
-    @apply w-full px-4 py-2.5 rounded bg-gray-50 border border-gray-200 focus:border-[#1e3a8a] focus:bg-white focus:outline-none transition-colors text-sm;
+  .form-label {
+    @apply text-sm font-bold text-text-accent text-left;
   }
 
-  .form-label {
-    @apply text-sm font-bold text-gray-800;
+  .form-input {
+    @apply w-full px-4 py-2.5 rounded text-sm bg-gray-50 border border-gray-200 focus:border-accent focus:bg-white focus:outline-none transition-colors;
+  }
+
+  /* Navbar */
+  .navbar {
+    @apply absolute top-0 left-0 w-full bg-primary py-3 px-6 flex items-center justify-between;
   }
 
   /* Layout */

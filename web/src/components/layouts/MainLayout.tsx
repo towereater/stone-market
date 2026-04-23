@@ -1,7 +1,10 @@
-import { Component } from "solid-js";
-import Navbar from "@components/shared/Navbar";
+import { Component, JSX } from "solid-js";
 
-const MainLayout: Component<any> = (props) => {
+import Navbar from "@components/shared/Navbar";
+  
+interface MainLayoutProps extends JSX.HTMLAttributes<HTMLElement> {}
+
+const MainLayout: Component<MainLayoutProps> = (props) => {
   return (
     <>
       <Navbar/>

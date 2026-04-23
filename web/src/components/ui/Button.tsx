@@ -12,7 +12,7 @@ export const Button: Component<ButtonProps> = (props) => {
 
   return (
     <button 
-      class={`${baseClass} flex items-center justify-center h-8 ${local.class || ""} ${local.isLoading ? "opacity-70 cursor-not-allowed" : ""}`} 
+      class={`${baseClass} flex items-center justify-center ${local.class || ""} ${local.isLoading ? "opacity-70 cursor-not-allowed" : ""}`} 
       disabled={local.isLoading || others.disabled}
       {...others}
     >

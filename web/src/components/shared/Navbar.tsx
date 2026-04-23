@@ -1,9 +1,10 @@
 import { Component, createSignal, onMount, Show } from "solid-js";
 import { A, useNavigate } from "@solidjs/router";
-import { locale, setLocale, t, Locale } from "@store/i18n";
+import { t } from "@store/i18n";
 import { isAuthenticated, logout } from "@store/auth";
 
 import { Button } from "@components/ui/Button";
+import { LanguageSelector } from "@components/ui/LanguageSelector";
 import { NavbarLink } from "@components/ui/NavbarLink";
 
 const Navbar: Component = () => {
@@ -24,9 +25,13 @@ const Navbar: Component = () => {
     navigate("/register");
   };
 
+  const handleProfile = () => {
+    navigate("/profile");
+  };
+
   const handleLogout = () => {
     logout();
-    
+
     const checkUser = isAuthenticated();
     setIsAuth(checkUser);
 
@@ -34,15 +39,13 @@ const Navbar: Component = () => {
   };
 
   return (
-    <header class="absolute top-0 left-0 w-full py-6 px-10 flex items-center justify-between z-50 text-accent">
+    <header class="absolute top-0 left-0 w-full bg-primary py-3 px-6 flex items-center justify-between">
 
       <A href="/" class="flex items-center">
-        <div class="font-bold text-2xl tracking-[0.2em]">
-          M
-        </div>
+        <img src="/images/logo.png" alt="Logo" class="w-10 h-10"/>
       </A>
 
-      <nav class="md:flex gap-10 font-medium text-sm tracking-widest">
+      <nav class="flex gap-10 font-medium text-sm tracking-widest">
         <NavbarLink href="/">
           {t('nav.home').toUpperCase()}
         </NavbarLink>
@@ -58,34 +61,28 @@ const Navbar: Component = () => {
       </nav>
 
       <div class="flex items-center gap-6">
-        <select
-          class="text-sm cursor-pointer font-medium tracking-widest text-accent"
-          value={locale()}
-          onChange={(e) => setLocale(e.currentTarget.value as Locale)}
-        >
-          <option value="en" class="text-accent">EN</option>
-          <option value="it" class="text-accent">IT</option>
-        </select>
+        <LanguageSelector />
 
         <Show
           when={isAuth()}
           fallback={
-            <>
-              <Button variant="secondary" onClick={handleRegister}>
+            <div class="flex items-center gap-2">
+              <Button variant="secondary" class="w-18 flex-1" onClick={handleRegister}>
                 {t('nav.register')}
               </Button>
-              <Button variant="primary" onClick={handleLogin}>
+              <Button variant="primary" class="w-18 flex-1" onClick={handleLogin}>
                 {t('nav.login')}
               </Button>
-            </>
+            </div>
           }
-        >
-          <NavbarLink href="/profile">
-            {t('nav.profile').toUpperCase()}
-          </NavbarLink>
-          <Button variant="primary" onClick={handleLogout}>
-            {t('nav.logout')}
-          </Button>
+        ><div class="flex items-center gap-2">
+            <Button variant="secondary" class="w-18 flex-1" onClick={handleProfile}>
+              {t('nav.profile')}
+            </Button>
+            <Button variant="primary" class="w-18 flex-1" onClick={handleLogout}>
+              {t('nav.logout')}
+            </Button>
+          </div>
         </Show>
       </div>
     </header>

@@ -1,34 +1,25 @@
 import { Component } from "solid-js";
 import { A } from "@solidjs/router";
-import { locale, setLocale, t, Locale } from "@store/i18n";
+import { t } from "@store/i18n";
 
-import styles from "@styles/Navbar.module.css";
+import { LanguageSelector } from "@components/ui/LanguageSelector";
+import { NavbarLink } from "../ui/NavbarLink";
 
 const AccessNavbar: Component = () => {
   return (
-    <header class={styles.header}>
-      
-      <A href="/" class="flex items-center gap-2">
-        <div class={styles.logoText}>
-          M
-        </div>
+    <header class="absolute top-0 left-0 w-full py-6 px-10 flex items-center justify-between">
+      <A href="/" class="flex items-center">
+        <img src="/images/logo.png" alt="Logo" class="w-10 h-10" />
       </A>
 
-      <nav class={styles.navLinks}>
-        <A href="/" class={styles.link} activeClass={styles.linkActive}>
-          {t('nav.home')}
-        </A>
+      <nav class="md:flex gap-10 font-medium text-sm tracking-widest">
+        <NavbarLink href="/">
+          {t('nav.home').toUpperCase()}
+        </NavbarLink>
       </nav>
 
-      <div class={styles.actionsContainer}>
-        <select 
-          class={styles.languageSelect}
-          value={locale()} 
-          onChange={(e) => setLocale(e.currentTarget.value as Locale)}
-        >
-          <option value="en" class="text-black">EN</option>
-          <option value="it" class="text-black">IT</option>
-        </select>
+      <div class="flex items-center gap-6">
+        <LanguageSelector />
       </div>
     </header>
   );

@@ -39,7 +39,7 @@ const Navbar: Component = () => {
   };
 
   return (
-    <header class="absolute top-0 left-0 w-full bg-primary py-3 px-6 flex items-center justify-between">
+    <header class="navbar">
 
       <A href="/" class="flex items-center">
         <img src="/images/logo.png" alt="Logo" class="w-10 h-10"/>

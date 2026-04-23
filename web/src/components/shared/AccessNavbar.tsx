@@ -7,12 +7,12 @@ import { NavbarLink } from "../ui/NavbarLink";
 
 const AccessNavbar: Component = () => {
   return (
-    <header class="absolute top-0 left-0 w-full py-6 px-10 flex items-center justify-between">
+    <header class="navbar">
       <A href="/" class="flex items-center">
         <img src="/images/logo.png" alt="Logo" class="w-10 h-10" />
       </A>
 
-      <nav class="md:flex gap-10 font-medium text-sm tracking-widest">
+      <nav class="flex gap-10 font-medium text-sm tracking-widest">
         <NavbarLink href="/">
           {t('nav.home').toUpperCase()}
         </NavbarLink>

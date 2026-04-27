@@ -1,8 +1,9 @@
 export interface Listing {
   id: number;
-  title: string;
-  date: string;
-  size: string;
+  location: string;
+  type: string;
+  price: string;
   slabs: number;
+  size: string;
   image: string;
 }

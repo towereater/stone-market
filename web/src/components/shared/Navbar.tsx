@@ -3,7 +3,7 @@ import { A, useNavigate } from "@solidjs/router";
 import { t } from "@store/i18n";
 import { isAuthenticated, logout } from "@store/auth";
 
-import { Button } from "@components/ui/Button";
+import Button from "@components/ui/Button";
 import { LanguageSelector } from "@components/ui/LanguageSelector";
 import { NavbarLink } from "@components/ui/NavbarLink";
 

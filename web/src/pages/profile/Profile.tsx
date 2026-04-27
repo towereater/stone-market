@@ -1,5 +1,5 @@
 import { Component, createSignal } from "solid-js";
-import { Button } from "@/components/ui/Button";
+import Button from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
 
 import styles from "@styles/Profile.module.css";

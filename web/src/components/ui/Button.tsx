@@ -5,14 +5,14 @@ interface ButtonProps extends JSX.ButtonHTMLAttributes<HTMLButtonElement> {
   isLoading?: boolean;
 }
 
-export const Button: Component<ButtonProps> = (props) => {
+const Button: Component<ButtonProps> = (props) => {
   const [local, others] = splitProps(props, ["variant", "class", "children", "isLoading"]);
 
   const baseClass = local.variant === "secondary" ? "btn-secondary" : local.variant === "cancel" ? "btn-cancel" : "btn-primary";
 
   return (
-    <button 
-      class={`${baseClass} flex items-center justify-center ${local.class || ""} ${local.isLoading ? "opacity-70 cursor-not-allowed" : ""}`} 
+    <button
+      class={`${baseClass} flex items-center justify-center ${local.class || ""} ${local.isLoading ? "opacity-70 cursor-not-allowed" : ""}`}
       disabled={local.isLoading || others.disabled}
       {...others}
     >
@@ -26,3 +26,5 @@ export const Button: Component<ButtonProps> = (props) => {
     </button>
   );
 };
+
+export default Button;

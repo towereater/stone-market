@@ -1,7 +1,7 @@
 import { Component } from "solid-js";
 import { t } from "@store/i18n";
 
-import { Button } from "@components/ui/Button";
+import Button from "@components/ui/Button";
 
 const Hero: Component = () => {
   return (

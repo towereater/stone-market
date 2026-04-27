@@ -8,6 +8,11 @@
 }
 
 @layer components {
+  /* Navbar */
+  .navbar {
+    @apply sticky top-0 left-0 w-full bg-primary py-3 px-6 flex items-center justify-between;
+  }
+
   /* Buttons */
   .btn-primary {
       @apply px-3 py-2 h-8 rounded-lg font-medium text-sm transition-colors border border-accent bg-primary text-accent hover:bg-[#c2c9cc];
@@ -28,11 +33,6 @@
 
   .form-input {
     @apply w-full px-4 py-2.5 rounded text-sm bg-gray-50 border border-gray-200 focus:border-accent focus:bg-white focus:outline-none transition-colors;
-  }
-
-  /* Navbar */
-  .navbar {
-    @apply top-0 left-0 w-full bg-primary py-3 px-6 flex items-center justify-between;
   }
 
   /* Layout */

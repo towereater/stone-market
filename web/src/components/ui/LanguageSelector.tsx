@@ -1,7 +1,7 @@
 import { Component } from "solid-js";
 import { locale, setLocale, t, Locale } from "@store/i18n";
 
-export const LanguageSelector: Component = () => {
+const LanguageSelector: Component = () => {
   return (
     <select
       class="text-sm cursor-pointer font-medium tracking-widest text-accent"
@@ -13,3 +13,5 @@ export const LanguageSelector: Component = () => {
     </select>
   );
 };
+
+export default LanguageSelector;

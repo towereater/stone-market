@@ -1,12 +1,10 @@
 import { Component, Show, createSignal } from "solid-js";
 import { A, useNavigate } from "@solidjs/router";
 import { t } from "@store/i18n";
-import { userService } from "@services/user";
+import userService from "@services/user";
 
-import styles from "@styles/Register.module.css";
-
-import { Input } from "@components/ui/Input";
-import { Button } from "@components/ui/Button";
+import Input from "@components/ui/Input";
+import Button from "@components/ui/Button";
 
 const Register: Component = () => {
   const navigate = useNavigate();

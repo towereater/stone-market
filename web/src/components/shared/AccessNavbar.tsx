@@ -2,8 +2,8 @@ import { Component } from "solid-js";
 import { A } from "@solidjs/router";
 import { t } from "@store/i18n";
 
-import { LanguageSelector } from "@components/ui/LanguageSelector";
-import { NavbarLink } from "../ui/NavbarLink";
+import LanguageSelector from "@components/ui/LanguageSelector";
+import NavbarLink from "../ui/NavbarLink";
 
 const AccessNavbar: Component = () => {
   return (

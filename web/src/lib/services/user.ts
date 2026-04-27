@@ -1,4 +1,4 @@
-export const userService = {
+const userService = {
   createUser: async (name: string, username: string, password: string) => {
     const response = await fetch(`${import.meta.env.VITE_API_HOST}/users`, {
       method: "POST",
@@ -18,3 +18,5 @@ export const userService = {
     return response.json();
   }
 };
+
+export default userService;

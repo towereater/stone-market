@@ -1,4 +1,4 @@
-export const sessionService = {
+const sessionService = {
   createSession: async (username: string, password: string) => {
     const response = await fetch(`${import.meta.env.VITE_API_HOST}/session`, {
       method: "POST",
@@ -17,3 +17,5 @@ export const sessionService = {
     return response.json();
   },
 };
+
+export default sessionService;

@@ -1,4 +1,5 @@
 import { Component } from "solid-js";
+
 import Hero from "@components/Home/Hero";
 import FeaturedSales from "@components/Home/FeaturedSales";
 

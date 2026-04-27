@@ -1,5 +1,5 @@
 import { Component, createSignal, For, Show } from "solid-js";
-import { Listing } from "@/classes/Listing";
+import { Listing } from "@classes/Listing";
 
 import styles from "@styles/ListingsHistory.module.css";
 

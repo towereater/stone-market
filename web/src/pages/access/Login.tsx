@@ -2,10 +2,10 @@ import { Component, Show, createSignal } from "solid-js";
 import { A, useNavigate } from "@solidjs/router";
 import { t } from "@store/i18n";
 import { login } from "@store/auth";
-import { sessionService } from "@services/session";
+import sessionService from "@services/session";
 
-import { Input } from "@components/ui/Input";
-import { Button } from "@components/ui/Button";
+import Input from "@components/ui/Input";
+import Button from "@components/ui/Button";
 
 const Login: Component = () => {
   const navigate = useNavigate();

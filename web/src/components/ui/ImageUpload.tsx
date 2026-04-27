@@ -1,6 +1,6 @@
 import { Component, createSignal, For } from "solid-js";
 
-export const ImageUpload: Component = () => {
+const ImageUpload: Component = () => {
   const [previews, setPreviews] = createSignal<string[]>([]);
 
   const handleFileChange = (e: Event) => {
@@ -31,3 +31,5 @@ export const ImageUpload: Component = () => {
     </div>
   );
 };
+
+export default ImageUpload;

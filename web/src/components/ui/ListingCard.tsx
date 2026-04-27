@@ -1,7 +1,7 @@
 import { Component } from "solid-js";
 import { A } from "@solidjs/router";
 
-import { Button } from "@components/ui/Button";
+// import Button from "@components/ui/Button";
 
 interface ListingCardProps {
   id: string | number;
@@ -12,7 +12,7 @@ interface ListingCardProps {
   slabs: number;
 }
 
-export const ListingCard: Component<ListingCardProps> = (props) => {
+const ListingCard: Component<ListingCardProps> = (props) => {
   return (
     <div class="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-shadow flex flex-col">
       <img src={props.image} alt={props.title} class="w-full h-48 object-cover" />
@@ -31,3 +31,5 @@ export const ListingCard: Component<ListingCardProps> = (props) => {
     </div>
   );
 };
+
+export default ListingCard;

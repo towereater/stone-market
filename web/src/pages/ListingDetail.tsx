@@ -1,6 +1,7 @@
 import { Component, createSignal } from "solid-js";
 import { useNavigate,useParams } from "@solidjs/router";
-import { Button } from "@/components/ui/Button";
+
+import Button from "@/components/ui/Button";
 
 const ListingDetail: Component = () => {
   // Path parameters extraction

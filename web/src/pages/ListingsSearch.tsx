@@ -1,7 +1,8 @@
 import { Component, createSignal, createMemo, For } from "solid-js";
-import { ListingCard } from "@/components/ui/ListingCard";
-import { Input } from "@/components/ui/Input";
-import { Button } from "@/components/ui/Button";
+
+import ListingCard from "@/components/ui/ListingCard";
+import Input from "@/components/ui/Input";
+import Button from "@/components/ui/Button";
 
 const ListingsSearch: Component = () => {
   const allListings = [

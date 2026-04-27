@@ -4,7 +4,7 @@ interface InputProps extends JSX.InputHTMLAttributes<HTMLInputElement> {
   label: string;
 }
 
-export const Input: Component<InputProps> = (props) => {
+const Input: Component<InputProps> = (props) => {
   const [local, others] = splitProps(props, ["label", "class", "id"]);
   
   const inputId = local.id || createUniqueId();
@@ -22,3 +22,5 @@ export const Input: Component<InputProps> = (props) => {
     </div>
   );
 };
+
+export default Input;

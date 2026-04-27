@@ -5,7 +5,7 @@ interface NavbarLinkProps extends JSX.AnchorHTMLAttributes<HTMLAnchorElement> {
   href: string;
 }
 
-export const NavbarLink: Component<NavbarLinkProps> = (props) => {
+const NavbarLink: Component<NavbarLinkProps> = (props) => {
   const [local, _] = splitProps(props, ["href", "children", "class"]);
 
   return (
@@ -14,3 +14,6 @@ export const NavbarLink: Component<NavbarLinkProps> = (props) => {
     </A>
   );
 };
+
+export default NavbarLink;
+  

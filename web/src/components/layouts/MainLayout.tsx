@@ -8,7 +8,10 @@ const MainLayout: Component<MainLayoutProps> = (props) => {
   return (
     <>
       <Navbar/>
-      {props.children}
+
+      <main>
+        {props.children}
+      </main>
     </>
   );
 };

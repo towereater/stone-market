@@ -8,7 +8,10 @@ const AccessLayout: Component<AccessLayoutProps> = (props) => {
   return (
     <>
       <AccessNavbar/>
-      {props.children}
+
+      <main>
+        {props.children}
+      </main>
     </>
   );
 };

@@ -14,7 +14,12 @@ interface Dictionary {
     profile: string;
     logout: string;
   };
-  hero: { title: string; subtitle: string; buy: string; sell: string };
+  hero: {
+    title: string;
+    subtitle: string;
+    buy: string;
+    sell: string
+  };
   featured: { title: string; dimensions: string; seller: string };
   auth: {
     loginSubtitle: string;
@@ -44,7 +49,12 @@ const dictionaries: Record<Locale, Dictionary> = {
       profile: "Profile",
       logout: "Logout"
     },
-    hero: { title: "MARBLE EXCHANGE", subtitle: "Curated Slabs for Visionary Designs", buy: "BUY MARBLE", sell: "SELL MARBLE" },
+    hero: {
+      title: "MARBLE EXCHANGE",
+      subtitle: "Curated Slabs for Visionary Designs",
+      buy: "BUY",
+      sell: "SELL"
+    },
     featured: { title: "FEATURED SALES", dimensions: "Dimensions", seller: "Seller" },
     auth: {
       loginSubtitle: "Log In to your account",
@@ -72,7 +82,12 @@ const dictionaries: Record<Locale, Dictionary> = {
       profile: "Profilo",
       logout: "Esci"
     },
-    hero: { title: "MARBLE EXCHANGE", subtitle: "Lastre Selezionate per Design Visionari", buy: "COMPRA MARMO", sell: "VENDI MARMO" },
+    hero: {
+      title: "MARBLE EXCHANGE",
+      subtitle: "Lastre Selezionate per Design Visionari",
+      buy: "COMPRA",
+      sell: "VENDI"
+    },
     featured: { title: "VENDITE IN EVIDENZA", dimensions: "Dimensioni", seller: "Venditore" },
     auth: {
       loginSubtitle: "Accedi al tuo account",

@@ -49,7 +49,7 @@ const Navbar: Component = () => {
         <NavbarLink href="/">
           {t('nav.home').toUpperCase()}
         </NavbarLink>
-        <NavbarLink href="/buy">
+        <NavbarLink href="/search">
           {t('nav.buy').toUpperCase()}
         </NavbarLink>
         <NavbarLink href="/create-listing">

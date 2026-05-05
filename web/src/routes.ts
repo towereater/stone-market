@@ -27,10 +27,6 @@ export const routes: RouteDefinition[] = [
         component: lazy(() => import("@/pages/ListingDetail")),
       },
       {
-        path: "/buy",
-        component: lazy(() => import("@pages/Buy")),
-      },
-      {
         path: "/about",
         component: lazy(() => import("@pages/About")),
       },

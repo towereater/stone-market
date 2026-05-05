@@ -16,19 +16,7 @@ const Navbar: Component = () => {
   });
 
   const navigate = useNavigate();
-
-  const handleLogin = () => {
-    navigate("/login");
-  };
-
-  const handleRegister = () => {
-    navigate("/register");
-  };
-
-  const handleProfile = () => {
-    navigate("/profile");
-  };
-
+  
   const handleLogout = () => {
     logout();
 
@@ -67,16 +55,16 @@ const Navbar: Component = () => {
           when={isAuth()}
           fallback={
             <div class="flex items-center gap-2">
-              <Button variant="secondary" class="w-18 flex-1" onClick={handleRegister}>
+              <Button variant="secondary" class="w-18 flex-1" onClick={() => navigate("/register")}>
                 {t('nav.register')}
               </Button>
-              <Button variant="primary" class="w-18 flex-1" onClick={handleLogin}>
+              <Button variant="primary" class="w-18 flex-1" onClick={() => navigate("/login")}>
                 {t('nav.login')}
               </Button>
             </div>
           }
         ><div class="flex items-center gap-2">
-            <Button variant="secondary" class="w-18 flex-1" onClick={handleProfile}>
+            <Button variant="secondary" class="w-18 flex-1" onClick={() => navigate("/profile")}>
               {t('nav.profile')}
             </Button>
             <Button variant="primary" class="w-18 flex-1" onClick={handleLogout}>

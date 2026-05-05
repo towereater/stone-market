@@ -14,11 +14,15 @@ const ListingsHistory: Component = () => {
 
   return (
     <div class="flex gap-8 items-start w-full">
-      
+
       <div class="flex-1 flex flex-col gap-6">
         <p class="text-2xl font-bold text-gray-900 mb-2">Listings History</p>
 
-        <For each={listings()}>
+        <For each={listings()} fallback={
+          <div class="col-span-full py-12 text-center text-gray-500 bg-white rounded-lg">
+            No materials match your search.
+          </div>
+        }>
           {(listing) => {
             return (
               <ListingCard listing={listing} />

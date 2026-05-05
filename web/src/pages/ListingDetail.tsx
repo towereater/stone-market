@@ -40,7 +40,9 @@ const ListingDetail: Component = () => {
   return (
     <div class="min-h-screen bg-white-400">
       <div class="max-w-6xl mx-auto px-6 py-8">
-        <button class="text-accent mb-6 hover:underline">Back to search</button>
+        <Button variant="primary" class="flex-1 mb-6" onClick={() => navigate("/search")}>
+          Back to search
+        </Button>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
           <div>
@@ -49,11 +51,6 @@ const ListingDetail: Component = () => {
               alt="Listing image"
               class="w-full rounded-xl shadow-lg"
             />
-            {/* <div class="grid grid-cols-4 gap-4">
-              <div class="h-20 bg-gray-200 rounded"></div>
-              <div class="h-20 bg-gray-200 rounded"></div>
-              <div class="h-20 bg-gray-200 rounded"></div>
-            </div> */}
           </div>
 
           <div class="flex flex-col">
@@ -72,6 +69,10 @@ const ListingDetail: Component = () => {
               <div>
                 <span class="block text-xs uppercase text-gray-500 font-bold tracking-wider">Thickness</span>
                 <span class="text-lg font-bold">20 mm</span>
+              </div>
+              <div>
+                <span class="block text-xs uppercase text-gray-500 font-bold tracking-wider">Price</span>
+                <span class="text-lg font-bold">{listing.price}</span>
               </div>
             </div>
 

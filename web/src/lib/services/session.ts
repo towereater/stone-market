@@ -1,6 +1,6 @@
 const sessionService = {
   createSession: async (username: string, password: string) => {
-    const response = await fetch(`${import.meta.env.VITE_API_HOST}/session`, {
+    const response = await fetch(`${import.meta.env.VITE_API_HOST}/sessions`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

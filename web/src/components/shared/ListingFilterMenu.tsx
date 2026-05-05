@@ -2,32 +2,30 @@ import { Component } from "solid-js";
 
 import Button from "@components/ui/Button";
 
-import styles from "@styles/ListingsHistory.module.css";
-
 const ListingFilterMenu: Component = () => {
   return (
-      <aside class={styles.filterSidebar}>
-        <h2 class={styles.filterTitle}>Filters</h2>
+    <aside class="w-72 flex flex-col">
+      <h2 class="text-xl font-bold mb-6 text-gray-900">Filters</h2>
 
-        <div class={styles.filterGroup}>
-          <div class={styles.filterLabel}>
-            Marble type
-            <span>&#8964;</span>
-          </div>
+      <div class="mb-4 border-b border-gray-300 pb-4">
+        <div class="flex justify-between items-center text-sm font-medium text-gray-800 cursor-pointer">
+          Marble type
+          <span>&#8964;</span>
         </div>
+      </div>
 
-        <div class={styles.filterGroup}>
-          <div class={styles.filterLabel}>
-            Listing date
-            <span>&#8964;</span>
-          </div>
+      <div class="mb-4 border-b border-gray-300 pb-4">
+        <div class="flex justify-between items-center text-sm font-medium text-gray-800 cursor-pointer">
+          Listing date
+          <span>&#8964;</span>
         </div>
+      </div>
 
-        <div class="flex gap-4 mt-8">
-          <Button variant="secondary">Apply</Button>
-          <Button variant="primary">Clear</Button>
-        </div>
-      </aside>
+      <div class="flex gap-4 mt-4">
+        <Button variant="secondary">Apply</Button>
+        <Button variant="primary">Clear</Button>
+      </div>
+    </aside>
   );
 };
 

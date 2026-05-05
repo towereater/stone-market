@@ -11,7 +11,7 @@ interface ListingCardProps {
 const ListingCard: Component<ListingCardProps> = (props) => {
   const navigate = useNavigate();
 
-  const handleDetail = (id: number) => {
+  const handleDetail = (id: string) => {
     navigate(`/listings/${id}`);
   };
 

@@ -23,17 +23,17 @@ const ProfileLayout: Component<ProfileLayoutProps> = (props) => {
           <div class="flex flex-col gap-2">
             <h3 class="font-bold text-sm mb-1">Sell</h3>
             <div class="flex flex-col gap-2 pl-2 text-sm">
-              <MenuItem href="/profile/active-listings">Active Listings</MenuItem>
-              <MenuItem href="/profile/received-orders">Received Orders</MenuItem>
-              <MenuItem href="/profile/history">Listings History</MenuItem>
+              <MenuItem href="/profile/listings-active">Active Listings</MenuItem>
+              <MenuItem href="/profile/orders-received">Received Orders</MenuItem>
+              <MenuItem href="/profile/listings-history">Listings History</MenuItem>
             </div>
           </div>
 
           <div class="flex flex-col gap-2">
             <h3 class="font-bold text-sm mb-1">Buy</h3>
             <div class="flex flex-col gap-2 pl-2 text-sm">
-              <MenuItem href="/profile/active-orders">Active Orders</MenuItem>
-              <MenuItem href="/profile/orders">Orders History</MenuItem>
+              <MenuItem href="/profile/orders-active">Active Orders</MenuItem>
+              <MenuItem href="/profile/orders-history">Orders History</MenuItem>
             </div>
           </div>
 

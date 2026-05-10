@@ -71,7 +71,7 @@ const Profile: Component = () => {
             </div>
           </div>
 
-          <Button class="btn-primary" type="submit">
+          <Button variant="secondary" type="submit">
             Save Changes
           </Button>
         </form>

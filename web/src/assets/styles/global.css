@@ -1,12 +1,6 @@
 @import "tailwindcss";
 @import "../themes/default.css" layer(theme);
 
-@layer utilities {
-  .btn-base {
-    @apply px-3 py-2 h-8 rounded-lg font-medium text-sm transition-colors;
-  }
-}
-
 @layer components {
   /* Navbar */
   .navbar {
@@ -28,7 +22,7 @@
 
   /* Form and input */
   .form-label {
-    @apply text-sm font-bold text-text-accent text-left;
+    @apply text-sm font-bold text-gray-900 text-left;
   }
 
   .form-input {

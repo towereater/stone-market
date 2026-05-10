@@ -1,4 +1,14 @@
-import { Listing } from "@classes/Listing";
+import { CreateListingRequest, Listing } from "@classes/Listing";
+
+const mockListing: Listing = {
+  id: "1",
+  location: "Verona, Italy",
+  type: "Verde Alpi",
+  price: "100",
+  size: "120cm x 90cm",
+  slabs: 10,
+  image: "/images/slab.jpg",
+};
 
 const listingService = {
   getListings: async () => {
@@ -13,13 +23,13 @@ const listingService = {
     // }
 
     const mockListings: Listing[] = [
-      { id: "1", location: "Verona, Italy", type: "Verde Alpi", price: "100", size: "120cm x 90cm", slabs: 10, image: "/images/slab.jpg" },
-      { id: "2", location: "Verona, Italy", type: "Verde Alpi", price: "100", size: "120cm x 90cm", slabs: 10, image: "/images/slab.jpg" },
-      { id: "3", location: "Verona, Italy", type: "Verde Alpi", price: "100", size: "120cm x 90cm", slabs: 10, image: "/images/slab.jpg" },
+      mockListing,
+      mockListing,
+      mockListing,
     ];
+    const response = { json: () => Promise.resolve(mockListings) };
 
-    // return response.json();
-    return mockListings;
+    return response.json();
   },
 
   getListing: async (id: string) => {
@@ -33,18 +43,26 @@ const listingService = {
     //   throw new Error(errorData.message || "Failed to fetch listing {id} details");
     // }
 
-    const mockListing: Listing = {
-      id: id,
-      location: "Verona, Italy",
-      type: "Verde Alpi",
-      price: "100",
-      size: "120cm x 90cm",
-      slabs: 10,
-      image: "/images/slab.jpg",
-    };
+    const response = { json: () => Promise.resolve(mockListing) };
 
-    // return response.json();
-    return mockListing;
+    return response.json();
+  },
+
+  createListing: async (req: CreateListingRequest) => {
+    // const response = await fetch(`${import.meta.env.VITE_API_HOST}/listings`, {
+    //   method: "POST",
+    //   headers: { "Content-Type": "application/json" },
+    //   body: JSON.stringify(req),
+    // });
+
+    // if (!response.ok) {
+    //   const errorData = await response.json().catch(() => ({}));
+    //   throw new Error(errorData.message || "Failed to create listing");
+    // }
+
+    const response = { json: () => Promise.resolve(mockListing) };
+
+    return response.json();
   }
 };
 

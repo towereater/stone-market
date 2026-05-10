@@ -34,7 +34,7 @@ const ListingDetail: Component = () => {
     await orderService.createOrder("username", listing.id || "");
     alert("Order placed successfully!");
 
-    navigate("/profile/orders");
+    navigate("/profile/orders-active");
   };
 
   return (
